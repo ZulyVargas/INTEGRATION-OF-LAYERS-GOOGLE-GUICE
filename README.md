@@ -102,5 +102,24 @@ Consultar Clientes  con _consultarClientes_ :
    ![](img/consultarCliente-8.png)
 
 
+_3.Configure en el XML correspondiente, la operación agregarItemRentadoACliente. Verifique el funcionamiento haciendo una consulta a través del 'mapper' desde MyBatisExample._
+
+**Mapper:**
+ 
+ ![](img/mapperItemRentado.png)
+ 
+ **Prueba:**
+
+ Ingresamos el item 92 al cliente con id 1478822:
+
+ ![](img/pruebaItemRentadoCliente.png)
+
+Prueba del ingreso en la base de datos:
+
+ ![](img/pruebaBDItemRentadoCliente.png)
+
+
+
+
 
    
