@@ -71,8 +71,10 @@ public class MyBatisExample {
         SqlSession sqlss = sessionfact.openSession();
         pruebaMapperCliente(sqlss);
 		pruebaMapperItems(sqlss); 
+		
 		sqlss.commit();
-        sqlss.close();           
+		sqlss.close();       
+		System.exit(0);
     }
 
 	private static void pruebaMapperCliente(SqlSession sqlss) {
@@ -99,8 +101,7 @@ public class MyBatisExample {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		   */
-
+		   */   
 	}
 
 	private static void pruebaMapperItems(SqlSession sqlss ) {
@@ -122,5 +123,7 @@ public class MyBatisExample {
 		System.out.println("***********************************************************************************");
 		//Consultar Item con id 20:
 		System.out.println(im.consultarItem(20));	
+          
+
 	}
 }
