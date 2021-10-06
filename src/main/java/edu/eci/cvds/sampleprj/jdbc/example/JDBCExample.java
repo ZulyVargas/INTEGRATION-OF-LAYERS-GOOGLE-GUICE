@@ -56,11 +56,14 @@ public class JDBCExample {
             }
             System.out.println("-----------------------");
             
-            
+            /**
             int suCodigoECI = 2163297;
             registrarNuevoProducto(con, suCodigoECI, "Zuly Vargas", 19999999);            
+            **/
             con.commit();
             con.close();
+            
+ 
                                    
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(JDBCExample.class.getName()).log(Level.SEVERE, null, ex);
