@@ -153,3 +153,7 @@ Consultamos el anterior item ingresado el cual tiene como id el número 20:
 
 
 ![](img/consultarItem20.png)
+
+Ejecución desde consola:
+
+    mvn exec:java -Dexec.mainClass="edu.eci.cvds.samples.services.client.MyBatisExample"
