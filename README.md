@@ -74,3 +74,25 @@ Sentencia SQL :
 
 ![](img/MODEL.png)
 
+**resultMaps iniciales: (Puntos 1 - 5):**
+
+![](img/resultMapInicial.png)
+
+
+ **resultMaps con prefijos determinados : (Puntos 6):**
+
+ ![](img/resultMapPrefijos.png)
+
+
+**Prueba**:
+
+_7. Use el programa de prueba suministrado (MyBatisExample) para probar cómo a través del 'mapper' generado por MyBatis, se puede consultar un Cliente:_
+
+Consultar Clientes  con _consultarClientes_ :
+
+ ![](img/consultarClientes.png)
+
+
+ ## Parte II (para el Miércoles)
+
+ 
