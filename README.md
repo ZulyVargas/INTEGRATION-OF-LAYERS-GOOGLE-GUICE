@@ -95,4 +95,12 @@ Consultar Clientes  con _consultarClientes_ :
 
  ## Parte II (para el Miércoles)
 
- 
+ _2.Verifique el funcionamiento haciendo una consulta a través del 'mapper' desde MyBatisExample:_
+
+ Consultar Cliente con id=8 y _consultarCliente_ :
+
+   ![](img/consultarCliente-8.png)
+
+
+
+   
