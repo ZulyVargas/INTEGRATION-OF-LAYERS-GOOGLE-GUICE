@@ -120,6 +120,36 @@ Prueba del ingreso en la base de datos:
 
 
 
+_4.Configure en el XML correspondiente (en este caso ItemMapper.xml) la operación 'insertarItem(Item it)._
+
+**Mapper:**
+![](img/pruebaInsertItem.png)
+
+ **Prueba:**
+
+Ingresamos un nuevo Item llamado "Oxigeno" con fecha de lanzamiento 2021-05-12, de genero "Ciencia ficción":
+
+![](img/pruebaItem.png)
+
+Prueba del ingreso en la base de datos:
 
 
-   
+![](img/pruebaItemBD.png)
+
+_5.Configure en el XML correspondiente (de nuevo en ItemMapper.xml) las operaciones 'consultarItem(int it) y 'consultarItems()' de ItemMapper. En este caso, tenga adicionalmente en cuenta:_
+
+**consultarItems():**
+
+ **Prueba:**
+
+![](img/consultarItems.png)
+
+
+**consultarItem(20):**
+
+Consultamos el anterior item ingresado el cual tiene como id el número 20:
+
+ **Prueba:**
+
+
+![](img/consultarItem20.png)
