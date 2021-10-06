@@ -69,7 +69,7 @@ public class Item implements Serializable{
         return descripcion;
     }
 
-    public void setDescrpcion(String descrpcion) {
+    public void setDescripcion(String descrpcion) {
         this.descripcion = descrpcion;
     }
 
