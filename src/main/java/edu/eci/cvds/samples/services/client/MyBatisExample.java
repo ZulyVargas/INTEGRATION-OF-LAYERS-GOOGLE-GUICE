@@ -20,7 +20,11 @@ package edu.eci.cvds.samples.services.client;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -64,12 +68,27 @@ public class MyBatisExample {
         //Crear el mapper y usarlo: 
         ClienteMapper cm= sqlss.getMapper(ClienteMapper.class);
         //Consultar todos los clientes:
-        System.out.println(cm.consultarClientes());
+        //System.out.println(cm.consultarClientes());
         System.out.println("***********************************************************************************");
-        //Consultar un cliente con id 8:
+        /*
+         * //Consultar un cliente con id 8:
         System.out.println(cm.consultarCliente(8));
         System.out.println("***********************************************************************************");
-        sqlss.commit();
-        sqlss.close();   
+        */
+        //Insertar item rentado: 
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); 
+		try {
+			//Fechas:
+			Date fechaInicial = formato.parse("2021-10-06");
+			Date fechaFinal= formato.parse("2021-10-06");
+			java.sql.Date sqlFechaInicial = new java.sql.Date(fechaInicial.getTime());
+	        java.sql.Date sqlFechaFinal = new java.sql.Date(fechaFinal.getTime());
+	        
+	        cm.agregarItemRentadoACliente(1478822, 92, sqlFechaInicial, sqlFechaFinal);     
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		sqlss.commit();
+        sqlss.close();           
     }
 }
