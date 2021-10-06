@@ -58,6 +58,12 @@
 	    WHERE c.documento = #{idcli}
 	</select>     
 	
+	<!--Insertar Item Rentado a Cliente -->
+	<insert parameterType="map" id="agregarItemRentadoACliente" >
+		INSERT INTO VI_ITEMRENTADO (CLIENTES_documento,ITEMS_id,fechainiciorenta,fechafinrenta)
+		VALUES (#{idcli},#{idit}, #{fechainicio}, #{fechafin})
+	</insert>
+	
 	
 	<!-- Result Map Cliente -->
 	<resultMap type='Cliente' id='ClienteResult'>
