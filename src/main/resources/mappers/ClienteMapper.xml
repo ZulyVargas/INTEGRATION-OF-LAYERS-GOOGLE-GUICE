@@ -80,19 +80,9 @@
 	    <id property='id' column='ir_id'/>
 	    <result property='fechainiciorenta' column='ir_fechainiciorenta'/>
 	    <result property='fechafinrenta' column='ir_fechafinrenta'/> 
-	    <association property="item" javaType="Item" resultMap="ItemResult"></association>
+	    <association property="item" javaType="Item" resultMap="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper.ItemResult"></association>
 	</resultMap>
-	<!-- Result Map Item-->
-	<resultMap type='Item' id='ItemResult'>
-	    <id property='id' column='i_id'/>
-	    <result property='nombre' column='i_nombre'/>
-	    <result property='descripcion' column='i_descripcion'/> 
-	    <result property='fechalanzamiento' column='i_fechalanzamiento'/> 
-		<result property='tarifaxdia' column='i_tarifaxdia'/> 
-		<result property='formatoRenta' column='i_formatorenta'/> 
-		<result property='genero' column='i_genero'/> 
-		<association property="tipo" javaType="TipoItem" resultMap="TipoItemResult"></association>			
-	</resultMap>
+
 	<!-- Result Map TipoItem-->
 	<resultMap type='TipoItem' id='TipoItemResult'>
 	    <id property='id' column='id'/>
