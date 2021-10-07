@@ -6,7 +6,7 @@ public interface ClienteDAO {
 
 	   public void save(Cliente c) throws PersistenceException;
 
-	   public Cliente load(int id) throws PersistenceException;
+	   public Cliente consultarCliente(int id) throws PersistenceException;
 	
 	
 	

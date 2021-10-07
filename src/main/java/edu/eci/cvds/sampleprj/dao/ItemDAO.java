@@ -1,7 +1,7 @@
 package edu.eci.cvds.sampleprj.dao;
 
 
-import edu.eci.cvds.sampleprj.dao.PersistenceException;
+//import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.samples.entities.Item;
 
 

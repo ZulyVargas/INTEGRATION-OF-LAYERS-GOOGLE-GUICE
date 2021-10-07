@@ -14,7 +14,7 @@ public class XXClienteDAO implements ClienteDAO{
 	}
 
 	@Override
-	public Cliente load(int id) throws PersistenceException {
+	public Cliente consultarCliente(int id) throws PersistenceException {
 		// TODO Auto-generated method stub
 		return null;
 	}
