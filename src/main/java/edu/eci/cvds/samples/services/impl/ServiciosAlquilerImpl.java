@@ -23,7 +23,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    private ItemDAO itemDAO;
 
    @Inject
-   private ItemDAO ClienteDAO;
+   private ClienteDAO clienteDAO; 
    
    
    @Override

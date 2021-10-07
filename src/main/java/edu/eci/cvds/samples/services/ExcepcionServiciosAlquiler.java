@@ -8,4 +8,8 @@ public class ExcepcionServiciosAlquiler extends Exception {
 		// TODO Auto-generated constructor stub
 	}
 
+	public ExcepcionServiciosAlquiler(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 }
