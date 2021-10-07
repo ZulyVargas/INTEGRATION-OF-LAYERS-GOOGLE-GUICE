@@ -6,5 +6,9 @@ Camilo Andrés Pichimata Cárdenas
 
 Zuly Valentina Vargas Ramirez
 
+<img src="img/model.png">
+<img src="img/cmodel.png">
+<br></br>
+
 ## PARTE I. INICIO EN CLASE
 
