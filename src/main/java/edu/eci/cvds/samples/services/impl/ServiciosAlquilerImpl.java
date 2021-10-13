@@ -14,10 +14,11 @@ import edu.eci.cvds.samples.entities.TipoItem;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
 
-import java.security.interfaces.RSAMultiPrimePrivateCrtKey;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
+
+import org.mybatis.guice.transactional.Transactional;
 
 @Singleton
 public class ServiciosAlquilerImpl implements ServiciosAlquiler {
@@ -121,6 +122,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    }
 
    @Override
+   @Transactional
    public void registrarAlquilerCliente(Date date, int docu, Item item, int numdias) throws ExcepcionServiciosAlquiler {
 	   try {
 		   if(numdias<1)throw  new ExcepcionServiciosAlquiler(ExcepcionServiciosAlquiler.ERROR_DIAS_RENTA);
@@ -135,6 +137,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    }
 
    @Override
+   @Transactional
    public void registrarCliente(Cliente c) throws ExcepcionServiciosAlquiler {
        try {
     	   clienteDAO.registrarCliente(c);
@@ -149,6 +152,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    }
 
    @Override
+   @Transactional
    public void actualizarTarifaItem(int id, long tarifa) throws ExcepcionServiciosAlquiler {
 	   try {
 		itemDAO.actualizarTarifaItem(id,tarifa);
@@ -158,6 +162,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    }
    
    @Override
+   @Transactional
    public void registrarItem(Item i) throws ExcepcionServiciosAlquiler {
 	   try {
 		itemDAO.registrarItem(i);
@@ -167,6 +172,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    }
 
     @Override
+    @Transactional
     public void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler {
     	try {
 			clienteDAO.vetarCliente(docu,estado);

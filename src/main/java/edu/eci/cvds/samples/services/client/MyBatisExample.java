@@ -73,7 +73,8 @@ public class MyBatisExample {
         SqlSession sqlss = sessionfact.openSession();
         */
         try {
-			System.out.println(ServiciosAlquilerFactory.getInstance().getServiciosAlquiler().consultarCliente(1));
+			//System.out.println(ServiciosAlquilerFactory.getInstance().getServiciosAlquiler().consultarCliente(1));
+        	System.out.print(ServiciosAlquilerFactory.getInstance().getServiciosAlquiler().consultarItem(20));
 			System.exit(0);
 		} catch (ExcepcionServiciosAlquiler e) {
 			e.printStackTrace();
