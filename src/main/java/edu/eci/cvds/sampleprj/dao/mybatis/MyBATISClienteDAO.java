@@ -11,6 +11,7 @@ import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 //import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.entities.Cliente;
+import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 
 
@@ -70,6 +71,18 @@ public class MyBATISClienteDAO implements ClienteDAO {
 			throw new PersistenceException(ExcepcionServiciosAlquiler.ERROR_VETAR_CLIENTE);
 		}
 		
+	}
+
+
+	@Override
+	public List<Item> consultarItemsRentadosCliente(int docu) throws PersistenceException {
+		try {
+			return clienteMapper.consultarItemsRentadosCliente(docu);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new PersistenceException(ExcepcionServiciosAlquiler.ERROR_CONSULTAR_ITEMS_RENTADOS_CLIENTE);
+		}
+		 
 	}     
 	
 
