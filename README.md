@@ -153,7 +153,7 @@ A continuación la estructura del proyecto con las clases añadidas en la parte 
 
 ### Configuración de la Inyección de dependencias
 
-<img src="img/inyeccion_Parte1.png">
+<img src="img/Inyeccion_Parte1.png">
 
 ### Prueba consulta de usuario con ID 1
 
