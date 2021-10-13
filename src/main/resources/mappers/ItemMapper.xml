@@ -19,7 +19,7 @@
 	    i.fechalanzamiento as i_fechalanzamiento,
 	    i.tarifaxdia as i_tarifaxdia,
 	    i.formatorenta as i_formatorenta,
-	    i.genero as i_formatorenta   
+	    i.genero as i_genero
 	    FROM VI_ITEMS as i
 	    left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id 
 	</select>
@@ -33,12 +33,29 @@
 	    i.fechalanzamiento as i_fechalanzamiento,
 	    i.tarifaxdia as i_tarifaxdia,
 	    i.formatorenta as i_formatorenta,
-	    i.genero as i_formatorenta   
+	    i.genero as i_genero
 	    FROM VI_ITEMS as i
 	    left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id 
 		WHERE i.id = #{idItem}
 	</select>
 	
+	<!--Consultar Items Disponibles:  -->
+	<select parameterType="map" id="consultarItemsDisponibles" resultMap="ItemResult"> 
+		select 
+		i.id as i_id,
+	    i.nombre as i_nombre,
+	    i.descripcion as i_descripcion,
+	    i.fechalanzamiento as i_fechalanzamiento,
+	    i.tarifaxdia as i_tarifaxdia,
+	    i.formatorenta as i_formatorenta,
+	    i.genero as i_genero
+	 	FROM VI_ITEMS as i
+	</select>
+	
+	<!--Consultar Items Disponibles:  -->
+	<update parameterType="map" id="actualizarTarifaItem"> 
+	 	UPDATE VI_ITEMS SET tarifaxdia = #{tarifa} WHERE id = #{id}
+	</update>
 	
 	  
 	<resultMap type='Item' id='ItemResult'>

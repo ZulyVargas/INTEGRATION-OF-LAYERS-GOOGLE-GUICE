@@ -4,6 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper">
+	
+	<!--Registrar Cliente -->
+	<insert parameterType="map" id="registrarCliente" >
+		INSERT INTO VI_CLIENTES(documento, nombre, telefono, direccion, email, vetado)
+		VALUES (#{cliente.documento}, #{cliente.nombre}, #{cliente.telefono}, #{cliente.direccion}, #{cliente.email}, #{cliente.vetado})
+	</insert>
+
 	<!--Consultar Clientes -->
 	<select parameterType="map" id="consultarClientes" resultMap="ClienteResult">
 		select
@@ -30,6 +37,7 @@
 	    left join VI_ITEMS as i on ir.ITEMS_id=i.id 
 	    left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id
 	</select>   
+	
 	<!--Consultar Cliente:  -->  
 	<select parameterType="map" id="consultarCliente" resultMap="ClienteResult">
 		select
@@ -63,6 +71,19 @@
 		INSERT INTO VI_ITEMRENTADO (CLIENTES_documento,ITEMS_id,fechainiciorenta,fechafinrenta)
 		VALUES (#{idcli},#{idit}, #{fechainicio}, #{fechafin})
 	</insert>
+	
+	<!--Consultar Items Rentados Cliente -->
+	<select parameterType="map" id="consultarItemsRentadosCliente" resultMap="ClienteResult">
+	    select 
+	    c.nombre, 
+	    i.nombre 
+	    from VI_CLIENTES as c 
+	    join VI_ITEMRENTADO as ir on c.documento = ir.CLIENTES_documento
+	    join VI_ITEMS as i on ir.ITEMS_id = i.id 
+	    WHERE c.documento = #{idCliente}
+	</select>
+	   
+	
 	
 	
 	<!-- Result Map Cliente -->
