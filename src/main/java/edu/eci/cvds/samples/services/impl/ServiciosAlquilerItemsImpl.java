@@ -13,19 +13,19 @@ import edu.eci.cvds.samples.services.ServiciosAlquiler;
 public class ServiciosAlquilerItemsImpl implements ServiciosAlquiler{
 
 	@Override
-	public int valorMultaRetrasoxDia(int itemId) {
+	public long valorMultaRetrasoxDia(int itemId) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public Cliente consultarCliente(long docu) throws ExcepcionServiciosAlquiler {
+	public Cliente consultarCliente(int docu) throws ExcepcionServiciosAlquiler {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<ItemRentado> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler {
+	public List<ItemRentado> consultarItemsCliente(int idcliente) throws ExcepcionServiciosAlquiler {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -67,7 +67,7 @@ public class ServiciosAlquilerItemsImpl implements ServiciosAlquiler{
 	}
 
 	@Override
-	public void registrarAlquilerCliente(Date date, long docu, Item item, int numdias)
+	public void registrarAlquilerCliente(Date date, int docu, Item item, int numdias)
 			throws ExcepcionServiciosAlquiler {
 		// TODO Auto-generated method stub
 		

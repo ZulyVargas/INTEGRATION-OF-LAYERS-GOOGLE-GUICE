@@ -41,12 +41,12 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
    }
 
    @Override
-   public int valorMultaRetrasoxDia(int itemId) {
+   public long valorMultaRetrasoxDia(int itemId) {
        return MULTA_DIARIA;
    }
 
    @Override
-   public Cliente consultarCliente(long docu) throws ExcepcionServiciosAlquiler {
+   public Cliente consultarCliente(int docu) throws ExcepcionServiciosAlquiler {
        Cliente c=null;
        if(clientes.containsKey(docu)){
            c=clientes.get(docu);
@@ -130,7 +130,7 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
    }
 
    @Override
-   public void registrarAlquilerCliente(Date date,long docu, Item item, int numdias) throws ExcepcionServiciosAlquiler {
+   public void registrarAlquilerCliente(Date date,int docu, Item item, int numdias) throws ExcepcionServiciosAlquiler {
 
        LocalDate ld=date.toLocalDate();
        LocalDate ld2=ld.plusDays(numdias);
@@ -142,14 +142,14 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
            c.getRentados().add(ir);
            itemsDisponibles.remove(ir.getItem().getId());
            itemsrentados.put(item.getId(), ir);
-           mapaPrestamosPorIdCliente.put(item.getId(),docu);
+           mapaPrestamosPorIdCliente.put(item.getId(),(long) docu);
        } else {
            throw new ExcepcionServiciosAlquiler("No existe el cliente con el documento " + docu);
        }
    }
 
    @Override
-   public List<ItemRentado> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler{        
+   public List<ItemRentado> consultarItemsCliente(int idcliente) throws ExcepcionServiciosAlquiler{        
        if (clientes.containsKey(idcliente)) {
            Cliente c = clientes.get(idcliente);
            return c.getRentados();            

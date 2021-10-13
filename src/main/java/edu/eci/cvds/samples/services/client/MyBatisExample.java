@@ -33,6 +33,8 @@ import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.entities.TipoItem;
+import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
+import edu.eci.cvds.samples.services.ServiciosAlquilerFactory;
 
 /**
  *
@@ -67,63 +69,14 @@ public class MyBatisExample {
      * @throws ParseException 
      */
     public static void main(String args[]) throws SQLException{
-        SqlSessionFactory sessionfact = getSqlSessionFactory();
+    	/*SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
-        pruebaMapperCliente(sqlss);
-		pruebaMapperItems(sqlss); 
-		
-		sqlss.commit();
-		sqlss.close();       
-		System.exit(0);
-    }
-
-	private static void pruebaMapperCliente(SqlSession sqlss) {
-        //Crear el mapper y usarlo: 
-        ClienteMapper cm= sqlss.getMapper(ClienteMapper.class);
-        //Consultar todos los clientes:
-        System.out.println(cm.consultarClientes());
-        System.out.println("***********************************************************************************");
-        /*
-         * //Consultar un cliente con id 8:*/
-        System.out.println(cm.consultarCliente(8));
-        
-        /**
-        System.out.println("***********************************************************************************");
         */
-        //Insertar item rentado: 
-        /*
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); 
-		try {
-			//Fechas:
-			java.sql.Date sqlFechaInicial = new java.sql.Date(formato.parse("2021-10-06").getTime());
-	        java.sql.Date sqlFechaFinal = new java.sql.Date(formato.parse("2021-10-06").getTime());
-	        cm.agregarItemRentadoACliente(1478822, 92, sqlFechaInicial, sqlFechaFinal);     
-		} catch (ParseException e) {
+        try {
+			System.out.println(ServiciosAlquilerFactory.getInstance().getServiciosAlquiler().consultarCliente(1));
+			System.exit(0);
+		} catch (ExcepcionServiciosAlquiler e) {
 			e.printStackTrace();
 		}
-		   */   
-	}
-
-	private static void pruebaMapperItems(SqlSession sqlss ) {
-		ItemMapper im= sqlss.getMapper(ItemMapper.class);	
-		/**
-		//Insertar item :
-		//Fecha
-		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); 
-		try {
-			java.sql.Date sqlfechaLanzamiento = new java.sql.Date(formato.parse("2021-05-12").getTime());
-			TipoItem tipoItem = new TipoItem(3, "Películas");
-			Item item = new Item(tipoItem,20,"Oxígeno","Película Oxigeno 2021 - Netflix",sqlfechaLanzamiento,5000,"DVD","Ciencia ficción");
-			im.insertarItem(item);
-		}catch (ParseException e) {
-			e.printStackTrace();
-		}**/
-		//Consultar Items:
-		System.out.println(im.consultarItems());	
-		System.out.println("***********************************************************************************");
-		//Consultar Item con id 20:
-		System.out.println(im.consultarItem(20));	
-          
-
-	}
+    }
 }
