@@ -18,6 +18,10 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.swing.DefaultRowSorter;
+
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.javassist.bytecode.ExceptionTable;
 import org.mybatis.guice.transactional.Transactional;
 
 @Singleton
@@ -165,8 +169,9 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    @Transactional
    public void registrarItem(Item i) throws ExcepcionServiciosAlquiler {
 	   try {
-		itemDAO.registrarItem(i);
-	   }catch (PersistenceException e) {
+		   if (itemDAO.consultarItem(i.getId()) == null) itemDAO.registrarItem(i);
+		   else throw new Exception();  
+	   }catch (Exception e) {
 		   throw new ExcepcionServiciosAlquiler(ExcepcionServiciosAlquiler.ERROR_REGISTRAR_ITEM);
 	   }   
    }
@@ -179,6 +184,26 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 		}catch (Exception e) {
 			throw new ExcepcionServiciosAlquiler(ExcepcionServiciosAlquiler.ERROR_VETAR_CLIENTE);
 		}
-       
    }
+    
+   @Override
+   @Transactional
+   public void agregarItemRentadoACliente(int id, int idit, Date fechainicio, Date fechafin) throws ExcepcionServiciosAlquiler {
+	   try {
+		   clienteDAO.agregarItemRentadoACliente(id, idit, fechainicio, fechafin);
+	   } catch (Exception e) {
+		   throw new ExcepcionServiciosAlquiler(ExcepcionServiciosAlquiler.ERROR_ITEM_RENTADO_CLIENTE);
+	   }
+   }
+   
+   @Override
+   @Transactional
+   public List<Item> consultarItemsRentadosCliente(int docu) throws ExcepcionServiciosAlquiler {
+   	try {
+			return clienteDAO.consultarItemsRentadosCliente(docu);
+		}catch (Exception e) {
+			e.printStackTrace();
+			throw new ExcepcionServiciosAlquiler(ExcepcionServiciosAlquiler.ERROR_CONSULTAR_ITEMS_RENTADOS_CLIENTE );
+		}
+  }
 }

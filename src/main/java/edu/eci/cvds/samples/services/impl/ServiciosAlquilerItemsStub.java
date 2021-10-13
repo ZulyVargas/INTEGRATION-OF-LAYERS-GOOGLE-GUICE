@@ -241,4 +241,17 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
        clientes.put(c3.getDocumento(), c3);
 
    }
+
+@Override
+public void agregarItemRentadoACliente(int id, int idit, Date fechainicio, Date fechafin)
+		throws ExcepcionServiciosAlquiler {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public List<Item> consultarItemsRentadosCliente(int docu) throws ExcepcionServiciosAlquiler {
+	// TODO Auto-generated method stub
+	return null;
+}
 }

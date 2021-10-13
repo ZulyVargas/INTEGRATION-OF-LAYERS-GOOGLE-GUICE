@@ -1,5 +1,6 @@
 package edu.eci.cvds.samples.services;
 
+import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.samples.entities.Cliente;
 import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.entities.ItemRentado;
@@ -80,6 +81,10 @@ public interface ServiciosAlquiler {
    public abstract void registrarItem(Item i) throws ExcepcionServiciosAlquiler;
 
    public abstract void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler;
+
+   public abstract void agregarItemRentadoACliente(int id, int idit, Date fechainicio, Date fechafin) throws ExcepcionServiciosAlquiler;
+
+   public abstract List<Item> consultarItemsRentadosCliente(int docu) throws ExcepcionServiciosAlquiler;
 
 
 
