@@ -6,6 +6,7 @@ import java.util.List;
 import edu.eci.cvds.sampleprj.dao.ClienteDAO;
 import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.samples.entities.Cliente;
+import edu.eci.cvds.samples.entities.Item;
 
 
 public class XXClienteDAO implements ClienteDAO{
@@ -40,6 +41,12 @@ public class XXClienteDAO implements ClienteDAO{
 	public void vetarCliente(long docu, boolean estado) throws PersistenceException {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Item> consultarItemsRentadosCliente(int docu) throws PersistenceException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
