@@ -32,7 +32,7 @@ xmlns:p="http://primefaces.org/ui">
             </p:column>
 
             <p:column headerText="Valor Multa">
-                <h:outputText value="#{AlquilerItemsBean.getMulta(itemRentado.item.id)}" />
+                <h:outputText value="#{AlquilerItemsBean.getMulta(itemRentado.getItem().getId())}" />
             </p:column>
 
             
