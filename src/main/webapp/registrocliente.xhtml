@@ -52,10 +52,12 @@ xmlns:p="http://primefaces.org/ui">
 			<p:column headerText="Vetado">
                 <h:outputText value="#{cliente.vetado}" />
             </p:column>
+			
+			<f:facet name="Seleccion">
+				<h:commandButton action = "registroalquiler?faces-redirect = true" value = "Continuar" />
+			</f:facet>
         </p:dataTable>
-		<f:facet name="Seleccion">
-			<h:commandButton action = "registroalquiler?faces-redirect = true" value = "Continuar" />
-		</f:facet>
+		
 		<!--Ingresar un nuevo cliente-->
 		
 		
