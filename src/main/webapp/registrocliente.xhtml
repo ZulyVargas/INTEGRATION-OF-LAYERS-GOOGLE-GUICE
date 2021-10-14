@@ -60,9 +60,24 @@ xmlns:p="http://primefaces.org/ui">
         </p:dataTable>
 		
 		<!--Ingresar un nuevo cliente-->
-		
-		
-		
+		    <p:outputLabel id="Documento" value="Documento: " />
+            <p:inputText id="Documento" type="long" binding="#{doc}" />
+
+            <p:outputLabel id="Nombre" value="Nombre: "/>
+            <p:inputText id="Nombre" type="String" binding="#{name}"/>
+
+            <p:outputLabel id="Direccion" value="Direccion: "/>
+            <p:inputText id="Direccion" type="String" binding="#{dir}"/>
+
+            <p:outputLabel id="Telefono" value="Telefono: " />
+            <p:inputText id="Telefono" type="String" binding="#{tele}"/>
+
+            <p:outputLabel id="Email" value="Email: " />
+            <p:inputText id="Email" type="String" binding="#{mail}"/>
+        
+		<div class="divButton">
+			<p:commandButton update="Formato" class="Button" actionListener="#{AlquilerItemsBean.registrarCliente(name.value,doc.value,tele.value,dir.value,mail.value)}" value="Registrar Cliente"/>
+		</div>
     </h:form>
 </div>
 </h:body>
