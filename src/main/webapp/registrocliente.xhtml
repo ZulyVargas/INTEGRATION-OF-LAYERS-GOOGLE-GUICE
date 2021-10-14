@@ -8,8 +8,6 @@ xmlns:p="http://primefaces.org/ui">
 	<title>Registro Clientes</title>
 	<style>
 	body{
-	
-		background-image: url("https://www.coverstyl.com/dpics/articles/J6_detail.jpg");
 		background-position: center;
 		background-repeat: repeat-y;
 		background-size: cover;
@@ -26,6 +24,7 @@ xmlns:p="http://primefaces.org/ui">
                      paginator="true"
 					 selectionMode="single" 
 					 rowKey="#{cliente.documento}"
+					 selection= "#{AlquilerItemsBean.clienteSeleccionado }"
                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                      currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" 
                      rowsPerPageTemplate="5,10,{ShowAll|'All'}">
@@ -54,6 +53,9 @@ xmlns:p="http://primefaces.org/ui">
                 <h:outputText value="#{cliente.vetado}" />
             </p:column>
         </p:dataTable>
+		<f:facet name="Seleccion">
+			<h:commandButton action = "registroalquiler?faces-redirect = true" value = "Continuar" />
+		</f:facet>
 		<!--Ingresar un nuevo cliente-->
 		
 		
