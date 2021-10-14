@@ -18,6 +18,8 @@ public class AlquilerItemsBean extends BasePageBean{
 
 	@Inject
     private ServiciosAlquiler serviciosAlquiler;	
+
+	private Cliente clienteSeleccionado;
 	
 	public List<Cliente> consultarClientes(){
 		List<Cliente> clientes = null;
@@ -28,6 +30,20 @@ public class AlquilerItemsBean extends BasePageBean{
 			e.printStackTrace();
 		}
 		return clientes;
+	}
+	/**
+	 * Retorna el cliente que ha sido seleccionado.
+	 * @return clienteSeleccionado.
+	 */
+	public Cliente getClienteSeleccionado() {
+		return clienteSeleccionado;
+	}
+	/**
+	 * Actualiza el cliente que ha sido seleccionado.
+	 * @param clienteSeleccionado - nuevo cliente seleccionado.
+	 */
+	public void setClienteSeleccionado(Cliente clienteSeleccionado) {
+		this.clienteSeleccionado = clienteSeleccionado;
 	}
 	
 
