@@ -166,3 +166,10 @@ Salida:
 <img src="img/Consulta_Parte1.png">
 
 ## PARTE II. PRUEBAS
+
+Muestra de la ejecución de las pruebas construidas:
+
+<img src="img/captura_pruebas_Parte2.png">
+
+## PARTE III - CAPA PRESENTACIÓN
+
