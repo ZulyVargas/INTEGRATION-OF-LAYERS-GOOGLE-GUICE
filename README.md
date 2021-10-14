@@ -170,9 +170,15 @@ Muestra de la ejecución de las pruebas construidas:
 
 <img src="img/captura_pruebas_Parte2.png">
 
-## PARTE III - CAPA PRESENTACIÓN
-
 ## PARTE IV - ENTREGA CONTINUA
+
+Comprobamos el ingreso de un cliente.
+
+<img src="img/RegistroCliente.png">
+
+Consultamos en la base de datos y verificamos que se haya ingresado:
+
+<img src="img/RegistroClienteBD.png">
 
 [![CircleCI](https://circleci.com/gh/ZulyVargas/lab08/tree/master.svg?style=svg)](https://circleci.com/gh/ZulyVargas/lab08/tree/master)
 
