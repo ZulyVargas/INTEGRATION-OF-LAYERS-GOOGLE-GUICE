@@ -16,6 +16,7 @@ import edu.eci.cvds.samples.services.ServiciosAlquiler;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import javax.swing.DefaultRowSorter;
@@ -101,7 +102,22 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+	   List<Cliente> clientes = consultarClientes();
+       for (Cliente c:clientes) {
+           List<ItemRentado> rentados = c.getRentados();
+           for (ItemRentado ir:rentados) {
+               if( ir.getItem().getId()==iditem) {
+                   LocalDate fechaFin=ir.getFechafinrenta().toLocalDate();
+                   LocalDate fechaEntrega=fechaDevolucion.toLocalDate();
+                   long diasRetraso = ChronoUnit.DAYS.between(fechaFin, fechaEntrega);
+                   if(diasRetraso<=0){
+                       return 0;
+                   }
+                   return diasRetraso*valorMultaRetrasoxDia(ir.getItem().getId());
+               }
+           }
+       }
+       throw  new ExcepcionServiciosAlquiler("El item"+iditem+"no se encuentra rentado");
    }
 
    @Override
