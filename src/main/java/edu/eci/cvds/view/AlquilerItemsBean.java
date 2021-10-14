@@ -61,6 +61,17 @@ public class AlquilerItemsBean extends BasePageBean{
 		}
 		return multa;
 	}
+	/**
+	 * 
+	 */
+	public void registrarCliente(String nombre, long documento, String telefono, String direccion, String email) {
+		Cliente clienteNuevo = new Cliente(nombre,documento,telefono,direccion,email);
+		try {
+			serviciosAlquiler.registrarCliente(clienteNuevo);
+		} catch (ExcepcionServiciosAlquiler e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	
