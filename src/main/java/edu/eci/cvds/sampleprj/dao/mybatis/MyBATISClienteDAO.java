@@ -1,7 +1,6 @@
 package edu.eci.cvds.sampleprj.dao.mybatis;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.List;
 
 import com.google.inject.Inject;
