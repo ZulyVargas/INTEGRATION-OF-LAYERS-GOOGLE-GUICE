@@ -25,16 +25,13 @@ public class ServiciosAlquilerTest {
         serviciosAlquiler = ServiciosAlquilerFactory.getInstance().getServiciosAlquilerTesting();
     }
 
-    @Before
-    public void setUp() {
-    }
-
+    
     @Test
     public void emptyDB() {
         for(int i = 0; i < 100; i += 10) {
             boolean r = false;
             try {
-                Cliente cliente = serviciosAlquiler.consultarCliente(i);
+                serviciosAlquiler.consultarCliente(i);
             } catch(ExcepcionServiciosAlquiler e) {
                 r = true;
             } catch(IndexOutOfBoundsException e) {
@@ -42,7 +39,7 @@ public class ServiciosAlquilerTest {
             }
             // Validate no Client was found;
             Assert.assertTrue(r);
-        };
+        }
     }
     
     @Test
@@ -91,8 +88,6 @@ public class ServiciosAlquilerTest {
     
     @Test
     public void noDeberiaConsultarItem() {
-    	TipoItem tipoItem = new TipoItem(3, "Peliculas");
-    	SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
     	try {
     		serviciosAlquiler.consultarItem(2);
     	} catch (Exception e) {
