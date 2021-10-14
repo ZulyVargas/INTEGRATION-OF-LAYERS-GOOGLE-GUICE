@@ -150,7 +150,6 @@ A continuación la estructura del proyecto con las clases añadidas en la parte 
         │
         └───test-classes
 
-
 ### Configuración de la Inyección de dependencias
 
 <img src="img/Inyeccion_Parte1.png">
@@ -172,4 +171,3 @@ Muestra de la ejecución de las pruebas construidas:
 <img src="img/captura_pruebas_Parte2.png">
 
 ## PARTE III - CAPA PRESENTACIÓN
-
