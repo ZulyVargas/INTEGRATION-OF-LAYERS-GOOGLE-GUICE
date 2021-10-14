@@ -60,22 +60,28 @@ xmlns:p="http://primefaces.org/ui">
         </p:dataTable>
 		
 		<!--Ingresar un nuevo cliente-->
+		<div>
 		    <p:outputLabel for="Documento" value="Documento: " style="color: black" /><br></br>
             <p:inputText id="Documento" type="long" binding="#{doc}" /><br></br>
-
-            <p:outputLabel for="Nombre" value="Nombre: " style="color: black" />
+		</div>
+		<div>
+            <p:outputLabel for="Nombre" value="Nombre: " style="color: black" /><br></br>
             <p:inputText id="Nombre" type="String" binding="#{name}" /><br></br>
-
+		</div>
+		<div>
             <p:outputLabel for="Direccion" value="Direccion: " style="color: black" />
             <p:inputText id="Direccion" type="String" binding="#{dir}" style="color: black" /><br></br>
-
+		</div>
+		<div>
             <p:outputLabel for="Telefono" value="Telefono: " style="color: black" /><br></br>
             <p:inputText id="Telefono" type="String" binding="#{tele}"/><br></br>
-
+		</div>
+		<div>
             <p:outputLabel for="Email" value="Email: " style="color: black"  /><br></br>
             <p:inputText id="Email" type="String" binding="#{mail}"/><br></br>
-        
-		<div class="divButton">
+        </div>
+		
+		<div>
 			<p:commandButton update="Formato" class="Button" actionListener="#{AlquilerItemsBean.registrarCliente(name.value,doc.value,tele.value,dir.value,mail.value)}" value="Registrar Cliente"/>
 		</div>
     </h:form>
