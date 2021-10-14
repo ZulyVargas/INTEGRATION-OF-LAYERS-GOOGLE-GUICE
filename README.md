@@ -171,3 +171,12 @@ Muestra de la ejecución de las pruebas construidas:
 <img src="img/captura_pruebas_Parte2.png">
 
 ## PARTE III - CAPA PRESENTACIÓN
+
+## PARTE IV - ENTREGA CONTINUA
+
+[![CircleCI](https://circleci.com/gh/ZulyVargas/lab08/tree/master.svg?style=svg)](https://circleci.com/gh/ZulyVargas/lab08/tree/master)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/21f8b2e1e044477a96579c0d4e1350b0)](https://www.codacy.com/gh/ZulyVargas/lab08/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ZulyVargas/lab08&amp;utm_campaign=Badge_Grade)
+
+[![ProjectDesign](https://www.herokucdn.com/deploy/button.png)](https://alquiler-items-bean.herokuapp.com)
+
