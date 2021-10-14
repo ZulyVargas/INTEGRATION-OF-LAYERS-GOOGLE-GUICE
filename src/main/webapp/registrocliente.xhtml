@@ -24,8 +24,9 @@ xmlns:p="http://primefaces.org/ui">
 		<!--Mostrar Clientes-->
         <p:dataTable var="cliente" value="#{AlquilerItemsBean.consultarClientes()}" rows="10"
                      paginator="true"
+					 selectionMode="single" 
                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                     currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+                     currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" 
                      rowsPerPageTemplate="5,10,{ShowAll|'All'}">
 
             <p:column headerText="Nombre">
